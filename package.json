@@ -1,0 +1,23 @@
+{
+    "name": "examples",
+    "license": "MIT",
+    "scripts": {
+      "install:all":"yarn install:a-project && yarn install:a-project && npm run install:a-project ",
+      "install:a-project": "cd a-project && yarn", 
+      "install:b-project": "cd b-project && npm install", 
+      "install:c-project": "cd c-project && npm i",
+
+      "serve:all": "concurrently \"serve:a-project\"  \"yarn serve:b-project\" \"yarn serve:c-project\"",
+      "serve:a-project": "cd a-project && yarn serve",
+      "serve:b-project": "cd b-project && yarn s·erve",
+      "serve:c-project": "cd c-project && yarn serve",
+
+      "build:all": "concurrently \"yarn build:a-project\" \"yarn build:b-project\" \"yarn build:c-project\"",
+      "build:a-project": "cd a-project && yarn build",
+      "build:b-project": "cd b-project && yarn build",
+      "build:c-project": "cd c-project && yarn build"
+    },
+    "devDependencies": {
+      "concurrently": "^6.0.0"
+    }
+}
